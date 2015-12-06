@@ -307,7 +307,7 @@ local function enableGC(timeout)
                 interceptedCmdTable.poolsize = interceptedCmdTable.poolsize - 1
                 interceptedAllCmd[pid] = nil
                 interceptedAllCmdSize = interceptedAllCmdSize - 1
-                debug("KTP: GC collected", cmd, pid)
+                debug("KTP: GC collected", interceptedCmdTable.cmd, pid)
             end
         end
     end)
