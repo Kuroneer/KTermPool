@@ -38,6 +38,9 @@
     The intent of this module is to be used with terminal spawning
     commands, but there's no problem when using it with other kind of
     window-creating commands, just be aware of:
+      - At this point, it only works with programs that spawn their own
+        windows: (Urxvt has each terminal spawn its own window, whereas
+        gnome-terminal has the first terminal spawn every window)
       - When Awesome exits, remaining clients in the pool will be KILLED
       - The command stars executing even when its client is not shown
       - If the command exits before a client is shown, it will consume a

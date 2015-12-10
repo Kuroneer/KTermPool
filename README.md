@@ -14,6 +14,9 @@ pool is filled again.
     
 The intent of this module is to be used with terminal spawning commands, but there's no problem
 when using it with other kind of window-creating commands, just be aware of:
+* At this point, it only works with programs that spawn their own
+  windows: (Urxvt has each terminal spawn its own window, whereas
+  gnome-terminal has the first terminal spawn every window)
 * When Awesome exits, remaining clients in the pool will be KILLED
 * The command stars executing even when its client is not shown
 * If the command exits before a client is shown, it will consume a
@@ -25,7 +28,7 @@ when using it with other kind of window-creating commands, just be aware of:
   but if you are worried about it, you may want to enable the
   pool garbage collector, which fixes this problem with only a
   periodic task.
-    
+
 ##Usage
 Just copy ktermpool.lua in your */awesome folder and load it in your rc.lua like this:  
 `require("ktermpool").addCmd(terminal, 5)`  
